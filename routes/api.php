@@ -15,7 +15,7 @@ use App\Http\Controllers\StudentController;
 */
 
 // create
-Route::post('student/create', [StudentController::class, 'createData']);
+Route::post('student/create', [StudentController::class, 'createData'])->name('student.store');
 
 // read
 Route::get('student/all', [StudentController::class, 'getAll'])->name('getAllStudent');

@@ -10,12 +10,16 @@ use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
 
-    public static function pplg1() {
-        return view('pplg1.index');
+    public static function index() {
+        return view('student');
     }
 
     public static function pplg3() {
         return view('pplg3.student');
+    }
+
+    public static function create(){
+        return view('student.create');
     }
 
     //Create
@@ -42,7 +46,7 @@ class StudentController extends Controller
 
     public static function updateData(Request $request, $id) {
         $student = DB::select(
-            DB::raw("update students set nama = '$request->nama',
+            DB::raw("update students set nama = '$request->name',
             updated_at = now() where id = '$id' "));
 
         $updated = Student::find($id);
